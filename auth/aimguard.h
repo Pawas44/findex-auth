@@ -10,7 +10,7 @@ using json = nlohmann::json;
 
 namespace Auth {
 
-    std::string baseUrl = "http://127.0.0.1:3000";
+    std::string baseUrl = "https://findex-auth.vercel.app/";
 
     std::string GetPcSid() {
         HANDLE token = nullptr;
