@@ -4,463 +4,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KeyAuth Admin Dashboard</title>
+    <title>Document</title>
     <link rel="stylesheet" href="../public/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="app-container">
-        <!-- Sidebar -->
-        <aside id="sidebar">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <i class="ri-shield-keyhole-line"></i>
-                    <span>KeyAuth</span>
-                </div>
-                <button id="sidebar-toggle" class="mobile-toggle">
-                    <i class="ri-menu-line"></i>
-                </button>
-            </div>
-
-            <div class="sidebar-content">
-                <div class="user-profile">
-                    <img src="https://avatars.githubusercontent.com/u/12345678" alt="Admin" class="avatar">
-                    <div class="user-info">
-                        <h4>Admin User</h4>
-                        <span class="user-role">Administrator</span>
-                    </div>
-                </div>
-
-                <nav class="sidebar-nav">
-                    <ul>
-                        <li class="nav-item active" onclick="showSection('dashboard')">
-                            <a href="#">
-                                <i class="ri-dashboard-line"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="nav-item" onclick="showSection('users')">
-                            <a href="#">
-                                <i class="ri-user-line"></i>
-                                <span>Users</span>
-                            </a>
-                        </li>
-                        <li class="nav-item" onclick="showSection('keys')">
-                            <a href="#keys">
-                                <i class="ri-key-line"></i>
-                                <span>License Keys</span>
-                            </a>
-                        </li>
-                        <li class="nav-item" onclick="showSection('settings')">
-                            <a href="#">
-                                <i class="ri-settings-line"></i>
-                                <span>Settings</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="logout">
-                                <i class="ri-logout-box-line"></i>
-                                <span>Log Out</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <header class="top-header">
-                <div class="header-left">
-                    <button id="mobile-sidebar-toggle" class="mobile-toggle">
-                        <i class="ri-menu-line"></i>
+    <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+        <div class="px-3 py-3 lg:px-5 lg:pl-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center justify-start rtl:justify-end">
+                    <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar"
+                        aria-controls="logo-sidebar" type="button"
+                        class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                        <span class="sr-only">Open sidebar</span>
+                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" fill-rule="evenodd"
+                                d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+                            </path>
+                        </svg>
                     </button>
-                    <h2 class="page-title">Dashboard</h2>
+                    <a href="https://nexxlokesh.pro" class="flex ms-2 md:me-24">
+                        <span
+                            class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">redefine</span>
+                    </a>
                 </div>
-                <div class="header-right">
-                    <div class="theme-toggle">
-                        <button id="theme-switch">
-                            <i class="ri-moon-line"></i>
-                        </button>
-                    </div>
-                    <div class="header-notifications">
-                        <button class="notification-btn">
-                            <i class="ri-notification-line"></i>
-                            <span class="badge">3</span>
-                        </button>
-                    </div>
-                    <div class="user-dropdown">
-                        <button class="user-dropdown-btn">
-                            <img src="https://avatars.githubusercontent.com/u/12345678" alt="Admin" class="avatar-small">
-                            <span>Admin</span>
-                            <i class="ri-arrow-down-s-line"></i>
-                        </button>
-                    </div>
-                </div>
-            </header>
-
-            <!-- Dashboard Section -->
-            <section id="dashboard" class="content-section">
-                <div class="stats-row">
-                    <div class="stat-card">
-                        <div class="stat-icon blue">
-                            <i class="ri-user-line"></i>
+                <div class="flex items-center">
+                    <div class="flex items-center ms-3">
+                        <div>
+                            <button type="button"
+                                class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                                aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                                <span class="sr-only">Open user menu</span>
+                                <img class="w-8 h-8 rounded-full"
+                                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                                    alt="user photo">
+                            </button>
                         </div>
-                        <div class="stat-details">
-                            <h3 class="stat-title">Total Users</h3>
-                            <p class="stat-value">256</p>
-                            <div class="stat-trend positive">
-                                <i class="ri-arrow-up-line"></i>
-                                <span>14% from last week</span>
+                        <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-sm shadow-sm dark:bg-gray-700 dark:divide-gray-600"
+                            id="dropdown-user">
+                            <div class="px-4 py-3" role="none">
+                                <p class="text-sm text-gray-900 dark:text-white" role="none">
+                                    Neil Sims
+                                </p>
+                                <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
+                                    neil.sims@flowbite.com
+                                </p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon green">
-                            <i class="ri-key-line"></i>
-                        </div>
-                        <div class="stat-details">
-                            <h3 class="stat-title">Active Keys</h3>
-                            <p class="stat-value">189</p>
-                            <div class="stat-trend positive">
-                                <i class="ri-arrow-up-line"></i>
-                                <span>8% from last week</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon purple">
-                            <i class="ri-key-2-line"></i>
-                        </div>
-                        <div class="stat-details">
-                            <h3 class="stat-title">Used Keys</h3>
-                            <p class="stat-value">67</p>
-                            <div class="stat-trend positive">
-                                <i class="ri-arrow-up-line"></i>
-                                <span>5% from last week</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon orange">
-                            <i class="ri-timer-line"></i>
-                        </div>
-                        <div class="stat-details">
-                            <h3 class="stat-title">App Usage</h3>
-                            <p class="stat-value">24.8h</p>
-                            <div class="stat-trend positive">
-                                <i class="ri-arrow-up-line"></i>
-                                <span>12% from last week</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="card chart-card">
-                        <div class="card-header">
-                            <h3 class="card-title">User Activity</h3>
-                            <div class="card-actions">
-                                <select class="form-select">
-                                    <option>Last 7 Days</option>
-                                    <option>Last 30 Days</option>
-                                    <option>This Year</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="chart-placeholder">
-                                <!-- Chart would be placed here with a charting library -->
-                                <div class="mock-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card recent-activity">
-                        <div class="card-header">
-                            <h3 class="card-title">Recent Activity</h3>
-                            <div class="card-actions">
-                                <button class="btn btn-sm btn-outline">
-                                    <i class="ri-refresh-line"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <ul class="activity-list">
-                                <li class="activity-item">
-                                    <div class="activity-icon blue">
-                                        <i class="ri-user-add-line"></i>
-                                    </div>
-                                    <div class="activity-content">
-                                        <p class="activity-text">New user registered</p>
-                                        <p class="activity-time">5 minutes ago</p>
-                                    </div>
+                            <ul class="py-1" role="none">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">Dashboard</a>
                                 </li>
-                                <li class="activity-item">
-                                    <div class="activity-icon green">
-                                        <i class="ri-key-line"></i>
-                                    </div>
-                                    <div class="activity-content">
-                                        <p class="activity-text">License key activated</p>
-                                        <p class="activity-time">30 minutes ago</p>
-                                    </div>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">Settings</a>
                                 </li>
-                                <li class="activity-item">
-                                    <div class="activity-icon red">
-                                        <i class="ri-close-circle-line"></i>
-                                    </div>
-                                    <div class="activity-content">
-                                        <p class="activity-text">Failed login attempt</p>
-                                        <p class="activity-time">1 hour ago</p>
-                                    </div>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">Earnings</a>
                                 </li>
-                                <li class="activity-item">
-                                    <div class="activity-icon purple">
-                                        <i class="ri-settings-line"></i>
-                                    </div>
-                                    <div class="activity-content">
-                                        <p class="activity-text">Settings updated</p>
-                                        <p class="activity-time">3 hours ago</p>
-                                    </div>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">Sign out</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </nav>
 
-            <!-- Users Section -->
-            <section id="users" class="content-section" style="display: none;">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">User Management</h3>
-                        <div class="card-actions">
-                            <div class="search-bar">
-                                <input type="text" placeholder="Search users..." class="search-input">
-                                <i class="ri-search-line search-icon"></i>
-                            </div>
-                            <button class="btn btn-primary" onclick="fetchUsers()">
-                                <i class="ri-refresh-line"></i>
-                                <span>Refresh</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-container">
-                            <table class="data-table">
-                                <thead>
-                                    <tr>
-                                        <th>Username</th>
-                                        <th>HWID</th>
-                                        <th>IP Address</th>
-                                        <th>Registration Date</th>
-                                        <th>Expiry</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="userList">
-                                    <tr>
-                                        <td>user123</td>
-                                        <td>3C6A-59F2-8D71-E940</td>
-                                        <td>192.168.1.105</td>
-                                        <td>01/05/2025</td>
-                                        <td>01/06/2025</td>
-                                        <td class="action-cell">
-                                            <button class="btn-icon edit" onclick="editUser('1', 'user123', '01/06/2025')">
-                                                <i class="ri-pencil-line"></i>
-                                            </button>
-                                            <button class="btn-icon delete" onclick="deleteUser('1')">
-                                                <i class="ri-delete-bin-line"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <aside id="logo-sidebar"
+        class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+        aria-label="Sidebar">
+        <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+            <ul class="space-y-2 font-medium">
+                <li onclick="showSection('users')">
+                    <a href="#"
+                        class="flex items-center justify-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <i
+                            class="ri-group-2-line text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white text-3xl"></i>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Users</span>
+                    </a>
+                </li>
+                <li onclick="showSection('keys')">
+                    <a href="#keys"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <i
+                            class="ri-key-2-line text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white text-3xl"></i>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Keys</span>
+                        <span
+                            class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300"><i
+                                class="ri-add-fill" onclick="showform()"></i></span>
+                    </a>
+                </li>
+                <li onclick="showSection('settings')">
+                    <a href="#"
+                        class="flex items-center justify-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <i
+                            class="ri-settings-6-line text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white text-3xl"></i>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
 
-            <!-- Keys Section -->
-            <section id="keys" class="content-section" style="display: none;">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">License Keys</h3>
-                        <div class="card-actions">
-                            <div class="search-bar">
-                                <input type="text" placeholder="Search keys..." class="search-input">
-                                <i class="ri-search-line search-icon"></i>
-                            </div>
-                            <button class="btn btn-primary" onclick="showform()">
-                                <i class="ri-add-line"></i>
-                                <span>Generate Keys</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-container">
-                            <table class="data-table">
-                                <thead>
-                                    <tr>
-                                        <th>License Key</th>
-                                        <th>Status</th>
-                                        <th>HWID</th>
-                                        <th>Created</th>
-                                        <th>Expiry</th>
-                                        <th>Note</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="keyList">
-                                    <tr>
-                                        <td>KEYAUTH-AB1CD-EF2GH-IJ3KL-MN4OP</td>
-                                        <td><span class="badge badge-success">Active</span></td>
-                                        <td>3C6A-59F2-8D71-E940</td>
-                                        <td>01/05/2025</td>
-                                        <td>01/06/2025</td>
-                                        <td>Premium License</td>
-                                        <td class="action-cell">
-                                            <button class="btn-icon copy" onclick="copyToClipboard('KEYAUTH-AB1CD-EF2GH-IJ3KL-MN4OP')">
-                                                <i class="ri-file-copy-line"></i>
-                                            </button>
-                                            <button class="btn-icon delete" onclick="deleteKey('1')">
-                                                <i class="ri-delete-bin-line"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <!-- keygen -->
+    <div class="overlay fixed w-full h-screen z-50" style="background: #00000034; display: none;" onclick="hideform()">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" onclick="event.stopPropagation()">
+            <form action="/generate-key" method="POST"
+                class="bg-white text-gray-800 p-8 rounded-lg shadow-md w-full max-w-md border border-gray-300">
+                <h2 class="text-xl font-bold mb-6 text-center">Create A New Key</h2>
 
-            <!-- Settings Section -->
-            <section id="settings" class="content-section" style="display: none;">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Application Settings</h3>
-                    </div>
-                    <div class="card-body">
-                        <form id="settings-form">
-                            <div class="settings-grid">
-                                <div class="form-group">
-                                    <label for="appName">Application Name</label>
-                                    <input type="text" id="appName" class="form-control" value="KeyAuth" placeholder="Application Name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="appVersion">Application Version</label>
-                                    <input type="text" id="appVersion" class="form-control" value="1.0.0" placeholder="Application Version">
-                                </div>
-                                <div class="form-group">
-                                    <label for="adminEmail">Admin Email</label>
-                                    <input type="email" id="adminEmail" class="form-control" value="admin@keyauth.com" placeholder="Admin Email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="themeMode">Theme Mode</label>
-                                    <select id="themeMode" class="form-control">
-                                        <option value="light">Light</option>
-                                        <option value="dark">Dark</option>
-                                        <option value="system">System Default</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="defaultExpiry">Default License Duration (Days)</label>
-                                    <input type="number" id="defaultExpiry" class="form-control" value="30" placeholder="Default License Duration">
-                                </div>
-                                <div class="form-group">
-                                    <label for="maxLoginAttempts">Max Login Attempts</label>
-                                    <input type="number" id="maxLoginAttempts" class="form-control" value="5" placeholder="Max Login Attempts">
-                                </div>
-                            </div>
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-primary">Save Changes</button>
-                                <button type="button" class="btn btn-danger">Reset to Default</button>
-                            </div>
-                        </form>
-                    </div>
+                <!-- License Amount -->
+                <input name="amount" type="number" placeholder="License Amount"
+                    class="w-full mb-4 px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required>
+
+                <!-- License Mask -->
+                <input name="mask" type="text" value="aimguard-xxxxx-xxxxxxx-xxxxxx-xxxx" placeholder="License Mask"
+                    class="w-full mb-4 px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                <!-- Checkboxes -->
+                <div class="flex items-center justify-between mb-4">
+                    <label class="flex items-center space-x-2">
+                        <input id="default-checkbox" type="checkbox" value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <span>Lowercase Letters</span>
+                    </label>
+                    <label class="flex items-center space-x-2">
+                        <input id="default-checkbox" type="checkbox" value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <span>Uppercase Letters</span>
+                    </label>
                 </div>
-            </section>
-        </main>
+
+                <!-- Dropdown -->
+                <select name="type"
+                    class="w-full mb-4 px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option>1 (default)</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+
+                <!-- License Note -->
+                <input name="note" type="text" placeholder="License Note"
+                    class="w-full mb-4 px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                <!-- License Expiry Unit -->
+                <select name="expiry_unit"
+                    class="w-full mb-4 px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option>Seconds</option>
+                    <option>Minutes</option>
+                    <option>Hours</option>
+                    <option>Days</option>
+                </select>
+
+                <!-- License Duration -->
+                <input name="duration" type="number" placeholder="License Duration"
+                    class="w-full mb-6 px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required>
+
+                <!-- Generate Button -->
+                <button type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded">
+                    Generate Keys
+                </button>
+            </form>
+
+        </div>
+
     </div>
 
-    <!-- Modal for Key Generation -->
-    <div class="modal-overlay" id="keygenModal">
-        <div class="modal">
-            <div class="modal-header">
-                <h2 class="modal-title">Generate License Keys</h2>
-                <button class="modal-close" onclick="hideform()">&times;</button>
+    <div class="p-4 sm:ml-64">
+
+        <div class="relative p-4 border-gray-200 rounded-lg dark:border-gray-700 mt-14">
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg content-section" id="users">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                HWID
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Users
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Expiry
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% users.forEach(user=> { %>
+                            <tr
+                                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <th scope="row"
+                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <%= user.hwid %>
+                                </th>
+                                <td class="px-6 py-4">
+                                    <%= user.username %>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <%= moment(user.expiry).format('DD/MM/YYYY') %>
+                                    
+                                </td>
+                                <td class="px-6 py-4">
+                                    <form action="/delete-user/<%= user._id %>" method="POST">
+                                        <button type="submit"
+                                            class="font-medium text-red-600 dark:text-red-500 hover:underline"
+                                            style="cursor: pointer;">Remove</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+
+                </table>
             </div>
-            <div class="modal-body">
-                <form id="key-generator-form" onsubmit="generateKey(); return false;">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="keyAmount">Number of Keys</label>
-                            <input type="number" id="keyAmount" name="amount" min="1" max="100" value="1" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="keyPattern">Key Pattern</label>
-                            <input type="text" id="keyPattern" name="mask" value="KEYAUTH-xxxxx-xxxxx-xxxxx-xxxxx" class="form-control">
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="keyType">License Type</label>
-                            <select id="keyType" name="type" class="form-control">
-                                <option value="1">Standard</option>
-                                <option value="2">Premium</option>
-                                <option value="3">Enterprise</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="keyNote">License Note</label>
-                            <input type="text" id="keyNote" name="note" placeholder="License Note" class="form-control">
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="expiryUnit">Expiry Unit</label>
-                            <select id="expiryUnit" name="expiry_unit" class="form-control">
-                                <option value="days">Days</option>
-                                <option value="months">Months</option>
-                                <option value="years">Years</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="expiryDuration">Duration</label>
-                            <input type="number" id="expiryDuration" name="duration" min="1" value="30" class="form-control" required>
-                        </div>
-                    </div>
-                    
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="useUppercase" name="uppercase" checked>
-                            <label for="useUppercase">Include Uppercase</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="useLowercase" name="lowercase">
-                            <label for="useLowercase">Include Lowercase</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="useNumbers" name="numbers" checked>
-                            <label for="useNumbers">Include Numbers</label>
-                        </div>
-                    </div>
-                    
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary btn-block">
-                            <i class="ri-key-line"></i> Generate Keys
-                        </button>
-                    </div>
-                </form>
+
+
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg content-section" id="keys"
+                style="display: none;">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                Product Keys
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Used
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Note
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Duration
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% keys.forEach(key=> { %>
+                            <tr
+                                class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200">
+                                <th scope="row"
+                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <%= key.key %>
+                                </th>
+                                <td class="px-6 py-4">
+                                    <%= key.used %>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <%= key.note || '—' %>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <%= moment(key.expiry).format('DD/MM/YYYY hh:mm A') %>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <form action="/delete-key/<%= key._id %>" method="POST"
+                                        onsubmit="return confirm('Are you sure?')">
+                                        <button type="submit"
+                                            class="font-medium text-red-600 dark:text-red-500 hover:underline"
+                                            style="cursor: pointer;">Remove</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }) %>
+
+
+                    </tbody>
+                </table>
             </div>
+
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 
 </html>
